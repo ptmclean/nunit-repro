@@ -20,4 +20,13 @@ public class Tests
         Console.WriteLine("Running Test 1");
         Assert.Pass();
     }
+    
+    [Test]
+    public async Task Test4()
+    {
+        await using var stream = File.AppendText("../../../../TestLog.txt");
+        await stream.WriteLineAsync("Running Test 4");
+        Console.WriteLine("Running Test 4");
+        Assert.Pass();
+    }
 }
